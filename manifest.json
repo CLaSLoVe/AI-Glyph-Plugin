@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "AI Glyph",
+  "version": "0.3.1",
+  "description": "Turns webpage text into synthetic glyphs that look like characters but do not exist. Local only.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI Glyph",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "cjkdata.js",
+        "garble.js",
+        "content.js"
+      ],
+      "css": [
+        "glyph.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+body { width: 280px; margin: 0; padding: 14px; background: #fff; font: 13px/1.5 system-ui, "PingFang SC", "Microsoft YaHei", sans-serif; color: #222; }
+h1 { font-size: 16px; margin: 0 0 10px; } h1 small { color: #999; font-weight: normal; font-size: 11px; }
+.row { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; }
+.col { flex-direction: column; align-items: stretch; }
+.between { display: flex; justify-content: space-between; }
+input[type=range] { accent-color: #6c5ce7; width: 100%; margin: 6px 0 2px; }
+.switch { appearance: none; width: 34px; height: 20px; border-radius: 10px; background: #ccc; position: relative; cursor: pointer; transition: .2s; }
+.switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: .2s; }
+.switch:checked { background: #6c5ce7; } .switch:checked::after { left: 16px; }
+.preview-title { margin-top: 10px; color: #999; font-size: 11px; }
+#preview { background: #f6f5ff; border-radius: 6px; padding: 8px; min-height: 40px; font-size: 18px; line-height: 1.6; }
+.row small { color: #999; font-weight: normal; }

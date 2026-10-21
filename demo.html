@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>AI Glyph · Demo</title>
+<style>
+  body { font-family: "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; max-width: 980px; margin: 28px auto; color: #222; line-height: 1.55; background: #fafafa; }
+  .sign { background: #2d3436; color: #ffeaa7; padding: 22px 28px; border-radius: 8px; text-align: center; }
+  .sign .big { font-size: 42px; font-weight: 800; letter-spacing: 1px; }
+  .sign .cn { font-size: 48px; font-weight: 800; color: #fff; margin-top: 4px; }
+  .sign .sub { font-size: 20px; color: #dfe6e9; margin-top: 8px; }
+  .menu { border: 1px solid #ddd; border-radius: 8px; padding: 16px 22px; margin: 18px 0; font-size: 20px; background: #fff; }
+  .menu h2 { font-size: 28px; margin: 0 0 10px; }
+  .row { display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding: 4px 0; }
+  .article { font-size: 18px; }
+  .article h1 { font-size: 32px; }
+  code { background: #eee; padding: 2px 6px; }
+  #live { color: #6c5ce7; }
+</style>
+</head>
+<body>
+  <div class="sign">
+    <div class="big">THE CORNER COFFEE SHOP</div>
+    <div class="cn">街角咖啡店</div>
+    <div class="sub">Fresh Bread &amp; Hot Coffee — Open Daily 7am–10pm</div>
+  </div>
+  <div class="sign" style="background:#f5efe1;color:#2d3436;margin-top:14px">
+    <div class="cn" style="color:#2d3436">珍珠奶茶 · 鲜榨果汁</div>
+    <div class="cn" style="color:#c0392b;font-size:40px">第二杯半價 · 新鲜现烤面包</div>
+  </div>
+
+  <div class="menu">
+    <h2>MENU 菜单</h2>
+    <div class="row"><span>Cappuccino 卡布奇诺</span><span>¥28</span></div>
+    <div class="row"><span>Chocolate Croissant 巧克力可颂</span><span>¥22</span></div>
+    <div class="row"><span>Strawberry Cheesecake 草莓芝士蛋糕</span><span>¥35</span></div>
+  </div>
+
+  <div class="article">
+    <h1>Welcome to the Future of Artificial Intelligence</h1>
+    <p>Large language models have changed the way we read, write and think. This paragraph is written in plain English so you can compare it before and after the extension runs.</p>
+    <h1>人工智能改变世界</h1>
+    <p>今天天气很好，我们一起去咖啡店喝咖啡吧。人工智能已经改变了我们的生活方式，从写作到画图，再到科学研究，大模型正在进入每一个领域。</p>
+    <p>混合文本：我在 Hong Kong 读 PhD，研究方向是 digital olfaction（数字嗅觉）和 materials science。</p>
+  </div>
+
+  <p>这些内容不会被修改：<code>console.log("hello")</code></p>
+  <input value="Input text stays the same 输入框不变" style="width: 320px">
+  <textarea rows="2" style="width: 320px">Textarea stays the same 文本框不变</textarea>
+  <div contenteditable="true" style="border:1px solid #ccc;padding:8px;margin-top:8px">Editable area stays the same 可编辑区域不变</div>
+
+  <p id="live">动态内容：</p>
+  <script>
+    setTimeout(() => {
+      const p = document.createElement('p');
+      p.id = 'dynamic';
+      p.textContent = 'This line was added dynamically 这一行是动态加载的';
+      document.body.appendChild(p);
+    }, 300);
+  </script>
+</body>
+</html>

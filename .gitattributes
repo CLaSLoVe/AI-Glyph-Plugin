@@ -1,0 +1,6 @@
+* text=auto
+*.sh text eol=lf
+*.png binary
+
+# Generated glyph table. Keep it in the repo; do not count it as handwritten code.
+cjkdata.js linguist-generated

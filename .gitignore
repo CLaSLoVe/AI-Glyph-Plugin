@@ -1,0 +1,31 @@
+# Chrome Web Store package. Rebuild with tools/package.sh.
+dist/
+
+# Local copy of the Pages site. The workflow builds this on the runner.
+_site/
+
+# IDS dump downloaded for tools/build_cjk.py. Not needed to run the extension.
+ids.txt
+*.ids.txt
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs and leftover browser profiles
+*.log
+chrome-profile/

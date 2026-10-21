@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI Glyph marquee</title>
+<link rel="stylesheet" href="../glyph.css">
+<style>
+  html, body { margin: 0; width: 1400px; height: 560px; overflow: hidden; background: #16122c; color: #fff; color-scheme: light; }
+  body {
+    box-sizing: border-box; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 88px; font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", sans-serif;
+  }
+  .brand { display: flex; align-items: center; gap: 28px; }
+  img { width: 148px; height: 148px; }
+  .name { font: 600 72px/1 "Avenir Next", "PingFang SC", sans-serif; letter-spacing: 0.01em; }
+  .samples { text-align: right; }
+  #cn { font-size: 108px; font-weight: 750; line-height: 1.05; letter-spacing: 0.08em; }
+  #cn2 { margin-top: 14px; font-size: 48px; font-weight: 700; line-height: 1.1; letter-spacing: 0.1em; color: #f4f0ff; }
+  #en { margin-top: 18px; font: 600 36px/1 "Avenir Next", "PingFang SC", sans-serif; letter-spacing: 0.02em; color: #efeaff; }
+</style>
+</head>
+<body>
+  <div class="brand"><img src="../icons/icon128.png" alt=""><div class="name">AI Glyph</div></div>
+  <div class="samples">
+    <div id="cn"></div>
+    <div id="cn2"></div>
+    <div id="en"></div>
+  </div>
+  <script src="../cjkdata.js"></script>
+  <script src="../garble.js"></script>
+  <script>
+    function paint(id, text, t) {
+      const el = document.getElementById(id);
+      el.style.setProperty('--aig-o', '0.056em');
+      el.appendChild(AIGlyph.renderSegments(AIGlyph.segment(text, t), document));
+    }
+    paint('cn', '珍珠奶茶', 0.85);
+    paint('cn2', '第二杯半價', 0.85);
+    paint('en', 'Hot Coffee', 0.85);
+  </script>
+</body>
+</html>

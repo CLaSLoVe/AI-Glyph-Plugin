@@ -1,0 +1,8 @@
+aig-w { display: inline; }
+aig-f { display: inline-grid; grid-template: auto / auto; align-items: baseline; vertical-align: baseline;
+        line-height: 1; text-indent: 0; text-transform: none; white-space: nowrap; }
+aig-f > aig-p { grid-area: 1 / 1; display: inline-block; line-height: 1; }
+aig-f > aig-p.aig-ov { user-select: none; -webkit-user-select: none; pointer-events: none; }
+aig-f.aig-lat > aig-p.aig-base { justify-self: start; clip-path: inset(-30% 50% -30% -30%); }
+aig-f.aig-lat > aig-p.aig-ov { justify-self: end; clip-path: inset(-30% -30% -30% 50%); }
+aig-n { display: inline; white-space: nowrap; }

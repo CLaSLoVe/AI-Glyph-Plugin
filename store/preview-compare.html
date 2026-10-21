@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI Glyph compare</title>
+<link rel="stylesheet" href="../glyph.css">
+<style>
+  html, body { margin: 0; width: 1280px; height: 800px; overflow: hidden; background: #1f1a2e; }
+  body {
+    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 112px 1fr;
+    font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", sans-serif;
+    color-scheme: light;
+  }
+  #labels { grid-column: 1 / -1; }
+  #before, #after { background: #fbf7f1; }
+  #after { box-shadow: inset 1px 0 0 #e6dfd4; }
+</style>
+</head>
+<body>
+  <div id="labels"></div>
+  <div id="before"></div>
+  <div id="after"></div>
+  <script>
+    const css = `
+      .poster { padding: 96px 48px 0; }
+      .cn { font-size: 76px; font-weight: 700; line-height: 1.45; letter-spacing: 0.02em; color: #221e18; white-space: nowrap; }
+      .en { font-size: 34px; font-weight: 600; line-height: 1.25; color: #5e584e;
+            font-family: "Avenir Next", "PingFang SC", sans-serif; }
+      .cn + .en { margin-top: 34px; }
+      .en + .en { margin-top: 8px; }
+    `;
+    const poster = `
+      <div class="poster">
+        <div class="cn">街角咖啡店</div>
+        <div class="cn">珍珠奶茶</div>
+        <div class="cn">第二杯半價</div>
+        <div class="en">Fresh Bread</div>
+        <div class="en">Hot Coffee</div>
+      </div>`;
+    const labels = document.getElementById('labels').attachShadow({ mode: 'open' });
+    labels.innerHTML = `
+      <style>
+        :host { display: grid; grid-template-columns: 1fr 1fr; height: 100%; }
+        div { display: flex; align-items: center; padding: 0 52px;
+              font: 600 40px/1 "Avenir Next", "PingFang SC", sans-serif; letter-spacing: 0.01em; }
+        .a { color: #efe8dc; }
+        .b { color: #fff; }
+      </style>
+      <div class="a">Original</div><div class="b">AI Glyph</div>`;
+    const before = document.getElementById('before').attachShadow({ mode: 'open' });
+    before.innerHTML = `<style>:host { display: block; } ${css}</style>${poster}`;
+    document.getElementById('after').innerHTML = `<style>${css}</style>${poster}`;
+  </script>
+  <script src="../cjkdata.js"></script>
+  <script src="../garble.js"></script>
+  <script src="../content.js"></script>
+</body>
+</html>

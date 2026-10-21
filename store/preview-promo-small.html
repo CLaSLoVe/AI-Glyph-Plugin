@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI Glyph small promo</title>
+<link rel="stylesheet" href="../glyph.css">
+<style>
+  html, body { margin: 0; width: 440px; height: 280px; overflow: hidden; background: #16122c; color: #fff; color-scheme: light; }
+  body {
+    box-sizing: border-box; padding: 28px 32px 0;
+    font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", sans-serif;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  img { width: 48px; height: 48px; }
+  .name { font: 600 26px/1 "Avenir Next", "PingFang SC", sans-serif; letter-spacing: 0.01em; }
+  #cn { margin-top: 28px; font-size: 68px; font-weight: 750; line-height: 1.05; letter-spacing: 0.06em; }
+  #cn2 { margin-top: 12px; font-size: 32px; font-weight: 700; line-height: 1.1; letter-spacing: 0.08em; color: #f4f0ff; }
+</style>
+</head>
+<body>
+  <div class="brand"><img src="../icons/icon128.png" alt=""><div class="name">AI Glyph</div></div>
+  <div id="cn"></div>
+  <div id="cn2"></div>
+  <script src="../cjkdata.js"></script>
+  <script src="../garble.js"></script>
+  <script>
+    function paint(id, text) {
+      const el = document.getElementById(id);
+      el.style.setProperty('--aig-o', '0.056em');
+      el.appendChild(AIGlyph.renderSegments(AIGlyph.segment(text, 0.85), document));
+    }
+    paint('cn', '珍珠奶茶');
+    paint('cn2', '第二杯半價');
+  </script>
+</body>
+</html>
