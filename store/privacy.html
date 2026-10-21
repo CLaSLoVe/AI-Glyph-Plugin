@@ -1,44 +1,87 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Glyph Privacy Policy</title>
+<title>AI Glyph privacy policy</title>
 <style>
   body { margin: 0; background: #f6f3ec; color: #221e18; font: 16px/1.65 "Iowan Old Style", Palatino, "PingFang SC", "Hiragino Sans GB", serif; }
   main { max-width: 680px; margin: 0 auto; padding: 48px 22px 72px; }
+  .langs { display: flex; gap: 6px; margin: 0 0 22px; }
+  .langs button {
+    appearance: none;
+    font: 13px/1 system-ui, sans-serif;
+    padding: 7px 12px;
+    border: 1px solid #cfc6b8;
+    background: transparent;
+    color: #6d675c;
+    cursor: pointer;
+  }
+  .langs button[aria-pressed="true"] { background: #221e18; border-color: #221e18; color: #f6f3ec; }
   h1 { font-size: 32px; line-height: 1.25; margin: 0 0 8px; }
   h2 { font-size: 20px; margin: 28px 0 8px; }
-  p, li { margin: 0 0 10px; }
+  p { margin: 0 0 10px; }
   .meta { color: #6d675c; font: 13px/1.4 system-ui, sans-serif; margin-bottom: 28px; }
-  ul { padding-left: 1.2em; }
+  code { font: 0.92em ui-monospace, monospace; }
 </style>
 </head>
 <body>
 <main>
-  <h1>AI Glyph 隐私政策</h1>
-  <p class="meta">Privacy Policy · 生效日期 Effective date: 21 October 2026</p>
+  <div class="langs" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">English</button>
+    <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+  </div>
 
-  <p>AI Glyph 是一个浏览器扩展。它把网页上看得见的文字画成合成字形：看起来像字母或汉字，但并不是真实存在的字。This extension redraws visible page text as synthetic glyphs. Those shapes are not real characters.</p>
+  <article data-lang="en">
+    <h1>AI Glyph privacy policy</h1>
+    <p class="meta">21 October 2026</p>
+    <p>AI Glyph redraws the words on a page into the kind of lettering you see on an early AI-generated shop sign. From a distance it is still the page. Up close, some of the characters are not real.</p>
+    <h2>Text on the page</h2>
+    <p>To draw them, the extension reads the visible text on the page, on your device, in the open tab. That text is not saved or uploaded. Inputs, password fields, and other editable areas are skipped. Cookies, account details, payment details, browsing history, and the list of sites you visit are not collected.</p>
+    <h2>Settings</h2>
+    <p>It stores two settings: on or off, and the intensity (5 to 100), using <code>chrome.storage.sync</code>. If Chrome Sync is on, they sync to your Google account. The developer does not receive them.</p>
+    <h2>Network</h2>
+    <p>The extension does not contact any server, and it does not load code from the network.</p>
+    <h2>Sharing</h2>
+    <p>The developer does not sell or transfer this data. Page text does not leave the browser.</p>
+    <h2>Contact</h2>
+    <p>The support email is on the Chrome Web Store listing.</p>
+  </article>
 
-  <h2>它处理哪些数据 / What it handles</h2>
-  <ul>
-    <li>页面文字 / Website content。扩展会在你的设备上读取网页里看得见的文字，用来画出合成字形。这些文字只留在当前页面里，不会被保存，不会被记录，也不会发送给开发者或任何服务器。The extension reads visible text on your device in order to draw the glyphs. That text is not stored, logged, or sent to the developer or to any server.</li>
-    <li>它不读取输入框、密码框、文本框和可编辑区域。It does not read input fields, password fields, text areas, or editable regions.</li>
-    <li>它不读取 Cookie、密码、账号、支付信息、浏览历史，也不记录你访问了哪些网站。It does not read cookies, passwords, account data, payment data, or browsing history, and it does not record which sites you visit.</li>
-  </ul>
-
-  <h2>它保存哪些设置 / Settings it stores</h2>
-  <p>扩展只用 <code>chrome.storage.sync</code> 保存两项设置：效果是否开启，以及强度（5 到 100 的数字）。除此之外不保存任何内容。如果你开启了 Chrome 同步，这两项设置会同步到你自己的 Google 账号。开发者收不到这些数据。The extension stores only whether the effect is on and the intensity, a number from 5 to 100. If Chrome Sync is on, those two preferences sync to your own Google account. The developer does not receive them.</p>
-
-  <h2>网络 / Network</h2>
-  <p>扩展不会发起网络请求，也不加载远程代码。The extension makes no network requests and does not load remote code.</p>
-
-  <h2>共享 / Sharing</h2>
-  <p>开发者不出售、不转让、不向第三方提供上述数据。页面文字不会离开你的浏览器。The developer does not sell or transfer this data. Page text does not leave your browser.</p>
-
-  <h2>联系 / Contact</h2>
-  <p>请使用 Chrome 网上应用店商品页上公布的支持邮箱联系开发者。Contact the developer at the support email published on the Chrome Web Store listing.</p>
+  <article data-lang="zh" hidden>
+    <h1>AI Glyph 隐私政策</h1>
+    <p class="meta">2026 年 10 月 21 日</p>
+    <p>AI Glyph 把网页上的字画成早期 AI 生成图里那种招牌字。远远看还是原来的页面，凑近才发现，有些字并不存在。</p>
+    <h2>页面上的文字</h2>
+    <p>要画这些字，扩展会在你自己的设备上、当前标签页里，读取页面上看得见的文字。这些文字不保存，也不上传。输入框、密码框和可编辑的地方会跳过。Cookie、账号、支付信息、浏览记录，以及你打开过的网站，都不读取。</p>
+    <h2>设置</h2>
+    <p>保存的设置只有两个：开或关，还有强度（5 到 100）。用的是 <code>chrome.storage.sync</code>。开了 Chrome 同步的话，这两项会同步到你的 Google 账号。开发者收不到。</p>
+    <h2>网络</h2>
+    <p>扩展不连接服务器，也不从网上加载代码。</p>
+    <h2>共享</h2>
+    <p>开发者不出售、不转让这些数据。页面文字不会离开浏览器。</p>
+    <h2>联系</h2>
+    <p>支持邮箱写在 Chrome 网上应用店的商品页上。</p>
+  </article>
 </main>
+<script>
+const buttons = document.querySelectorAll(".langs button");
+const articles = document.querySelectorAll("article");
+const titles = { en: "AI Glyph privacy policy", zh: "AI Glyph 隐私政策" };
+const groupLabel = { en: "Language", zh: "语言" };
+const group = document.querySelector(".langs");
+
+function show(lang) {
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+  document.title = titles[lang];
+  group.setAttribute("aria-label", groupLabel[lang]);
+  for (const article of articles) article.hidden = article.dataset.lang !== lang;
+  for (const button of buttons) button.setAttribute("aria-pressed", String(button.dataset.lang === lang));
+}
+
+for (const button of buttons) {
+  button.addEventListener("click", () => show(button.dataset.lang));
+}
+</script>
 </body>
 </html>
