@@ -1,0 +1,52 @@
+{
+  "extName": {
+    "message": "AI Glyph",
+    "description": "Extension name in the toolbar, popup, and Chrome Web Store."
+  },
+  "extDescription": {
+    "message": "Turns webpage text into synthetic glyphs that look like characters but do not exist. Local only.",
+    "description": "Store summary and manifest description. Maximum 132 characters."
+  },
+  "enabled": {
+    "message": "Enabled",
+    "description": "Label for the on/off switch in the popup."
+  },
+  "intensity": {
+    "message": "Intensity",
+    "description": "Label for the intensity slider in the popup."
+  },
+  "preview": {
+    "message": "Preview",
+    "description": "Heading above the live glyph preview."
+  },
+  "levelSlight": {
+    "message": "Slight",
+    "description": "Intensity name when the value is below 25."
+  },
+  "levelClear": {
+    "message": "Clear",
+    "description": "Intensity name when the value is from 25 to 49."
+  },
+  "levelHeavy": {
+    "message": "Heavy",
+    "description": "Intensity name when the value is from 50 to 79."
+  },
+  "levelMax": {
+    "message": "Max",
+    "description": "Intensity name when the value is 80 or above."
+  },
+  "intensityValue": {
+    "message": "$value$ ($level$)",
+    "description": "Slider readout: the numeric intensity and its short name.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "50"
+      },
+      "level": {
+        "content": "$2",
+        "example": "Clear"
+      }
+    }
+  }
+}

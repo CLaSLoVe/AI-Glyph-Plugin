@@ -1,14 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "AI Glyph",
+  "name": "__MSG_extName__",
   "version": "0.3.1",
-  "description": "Turns webpage text into synthetic glyphs that look like characters but do not exist. Local only.",
+  "default_locale": "en",
+  "description": "__MSG_extDescription__",
   "permissions": [
     "storage"
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "AI Glyph",
+    "default_title": "__MSG_extName__",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",

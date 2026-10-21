@@ -30,21 +30,15 @@ https://<owner>.github.io/<repo>/privacy.html
 
 ## 商品信息
 
-这些字段来自 `manifest.json`，上传之后不能在网页里改。要改就改文件、把 `version` 加大、重新打包再传。
+名称和摘要来自 `_locales/*/messages.json`，`manifest.json` 用 `__MSG_extName__` 和 `__MSG_extDescription__` 引用。上传之后不能在网页里改。要改就改对应语言的 `messages.json`、把 `version` 加大、重新打包再传。不要把某一种语言的句子直接写回 `manifest.json`。`default_locale` 是 `en`。
 
-| 字段 | 内容 |
-|---|---|
-| 名称 | AI Glyph |
-| 摘要 | Turns webpage text into synthetic glyphs that look like characters but do not exist. Local only. |
-| 版本 | 0.3.1 |
+| 字段 | English | 中文（简体） |
+|---|---|---|
+| 名称 | AI Glyph | AI Glyph |
+| 摘要 | Turns webpage text into synthetic glyphs that look like characters but do not exist. Local only. | 把网页文字变成看起来像字、但并不存在的合成字形。只在本地运行，可随时关闭。 |
+| 版本 | 0.3.1 | 0.3.1 |
 
-摘要如果想改成中文，把 manifest 的 `description` 换成下面这句（37 个字符，上限 132），再重新打包：
-
-```
-把网页文字变成看起来像字、但并不存在的合成字形。只在本地运行，可随时关闭。
-```
-
-界面是英文。商店默认语言选 **English**，详细介绍用下面的英文。默认语言选中文也可以，详细介绍就用中文那一版。两种不要贴进同一个文本框。
+商店默认语言选 **English**。后台会按语言带出上面的名称和摘要。详细介绍仍要按语言分别粘贴，英文和简体中文用下面两版，不要贴进同一个文本框。弹窗跟浏览器界面语言走：简体中文用中文，其余语言用英文。
 
 类别：**Entertainment**。不要选 Accessibility。这不是阅读器、翻译器或无障碍工具。
 
@@ -86,15 +80,17 @@ AI Glyph 把你正在看的网页文字画成合成字形。字号、粗细、�
 
 全部是直角、铺满、没有透明通道。
 
-| 后台位置 | 文件 | 尺寸 |
-|---|---|---|
-| 商店图标 | `icons/icon128.png` | 128×128 |
-| 截图 1 | `store/screenshots/01-compare.png` | 1280×800 |
-| 截图 2 | `store/screenshots/02-popup.png` | 1280×800 |
-| 小宣传图（必填） | `store/promo-440x280.png` | 440×280 |
-| 横幅宣传图（可选） | `store/promo-1400x560.png` | 1400×560 |
+每种语言各传一套。英文是默认语言，用 English 那一列；简体中文在后台切到中文后再传「中文（简体）」那一列。图标两种语言共用。
 
-截图是默认强度 50 的真实输出。宣传图用同一个引擎，强度 85，让缩小后仍能看出字形。宣传视频留空。
+| 后台位置 | English | 中文（简体） | 尺寸 |
+|---|---|---|---|
+| 商店图标 | `icons/icon128.png` | 同左 | 128×128 |
+| 截图 1 | `store/screenshots/01-compare.png` | `store/screenshots/zh_CN/01-compare.png` | 1280×800 |
+| 截图 2 | `store/screenshots/02-popup.png` | `store/screenshots/zh_CN/02-popup.png` | 1280×800 |
+| 小宣传图（必填） | `store/promo-440x280.png` | `store/zh_CN/promo-440x280.png` | 440×280 |
+| 横幅宣传图（可选） | `store/promo-1400x560.png` | `store/zh_CN/promo-1400x560.png` | 1400×560 |
+
+截图是默认强度 50 的真实输出，画面文字和弹窗跟该语言一致。宣传图用同一个引擎，强度 85，让缩小后仍能看出字形。宣传视频留空。
 
 ## 隐私设置页
 

@@ -18,6 +18,7 @@
     margin-top: 36px; background: #2d3436; color: #fff; border-radius: 14px; padding: 26px 32px 28px;
   }
   .sign .cn { font-size: 52px; font-weight: 750; letter-spacing: 0.04em; line-height: 1.25; }
+  .sign .lat { letter-spacing: 0.01em; font-family: "Avenir Next", "PingFang SC", sans-serif; }
   .sign .sub { margin-top: 8px; font-size: 28px; font-weight: 650; letter-spacing: 0.06em; color: #ffeaa7; }
   iframe {
     position: fixed; top: 36px; right: 28px; width: 308px; height: 378px;
@@ -28,18 +29,34 @@
 </style>
 </head>
 <body>
-  <article>
-    <h1>人工智能改变世界</h1>
-    <p>今天天气很好，我们一起去咖啡店喝咖啡吧。</p>
-    <p>珍珠奶茶，第二杯半價，新鲜现烤面包。</p>
-    <h1 class="en">Welcome to the corner cafe</h1>
-    <p class="en">Fresh bread and hot coffee, open daily from seven until ten.</p>
-    <div class="sign">
-      <div class="cn">街角咖啡店</div>
-      <div class="sub">珍珠奶茶 · 第二杯半價</div>
-    </div>
-  </article>
-  <iframe src="../popup.html" scrolling="no"></iframe>
+  <article id="page"></article>
+  <iframe id="popup" scrolling="no"></iframe>
+  <script>
+    const COPY = {
+      en: {
+        html: '<h1>The corner cafe</h1>'
+          + '<p>Fresh bread and hot coffee, open daily from seven until ten.</p>'
+          + '<p>The second cup is half price.</p>'
+          + '<h1 class="en">Welcome in</h1>'
+          + '<p class="en">Warm bread, just out of the oven.</p>'
+          + '<div class="sign"><div class="cn lat">Fresh Bread</div><div class="sub">Hot Coffee</div></div>'
+      },
+      'zh-CN': {
+        html: '<h1>人工智能改变世界</h1>'
+          + '<p>今天天气很好，我们一起去咖啡店喝咖啡吧。</p>'
+          + '<p>珍珠奶茶，第二杯半价，新鲜现烤面包。</p>'
+          + '<h1 class="en">欢迎光临街角咖啡店</h1>'
+          + '<p class="en">新鲜面包和热咖啡，每天早上七点到晚上十点。</p>'
+          + '<div class="sign"><div class="cn">街角咖啡店</div><div class="sub">珍珠奶茶 · 第二杯半价</div></div>'
+      }
+    };
+    const lang = new URLSearchParams(location.search).get('lang') || 'en';
+    const copy = COPY[lang];
+    if (!copy) throw new Error('Unsupported preview lang: ' + lang);
+    document.documentElement.lang = lang === 'zh-CN' ? 'zh-CN' : 'en';
+    document.getElementById('page').innerHTML = copy.html;
+    document.getElementById('popup').src = '../popup.html?lang=' + encodeURIComponent(lang);
+  </script>
   <script src="../cjkdata.js"></script>
   <script src="../garble.js"></script>
   <script src="../content.js"></script>

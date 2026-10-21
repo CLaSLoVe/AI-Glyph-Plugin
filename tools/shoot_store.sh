@@ -18,7 +18,7 @@ if [ -z "$CHROME" ]; then
 fi
 ROOT="$(pwd)"
 UD="$(mktemp -d)"
-mkdir -p store/screenshots
+mkdir -p store/screenshots/zh_CN store/zh_CN
 trap 'rm -rf "$UD"' EXIT
 
 shoot() {
@@ -58,7 +58,16 @@ print(f"{path} {w}x{h} RGB")
 PY
 }
 
-shoot 1280 800 store/preview-compare.html store/screenshots/01-compare.png
-shoot 1280 800 store/preview-popup.html store/screenshots/02-popup.png
-shoot 440 280 store/preview-promo-small.html store/promo-440x280.png
-shoot 1400 560 store/preview-promo-marquee.html store/promo-1400x560.png
+render_locale() {
+  lang="$1"
+  shots="$2"
+  small="$3"
+  wide="$4"
+  shoot 1280 800 "store/preview-compare.html?lang=${lang}" "$shots/01-compare.png"
+  shoot 1280 800 "store/preview-popup.html?lang=${lang}" "$shots/02-popup.png"
+  shoot 440 280 "store/preview-promo-small.html?lang=${lang}" "$small"
+  shoot 1400 560 "store/preview-promo-marquee.html?lang=${lang}" "$wide"
+}
+
+render_locale en store/screenshots store/promo-440x280.png store/promo-1400x560.png
+render_locale zh-CN store/screenshots/zh_CN store/zh_CN/promo-440x280.png store/zh_CN/promo-1400x560.png

@@ -1,0 +1,52 @@
+{
+  "extName": {
+    "message": "AI Glyph",
+    "description": "Extension name in the toolbar, popup, and Chrome Web Store."
+  },
+  "extDescription": {
+    "message": "把网页文字变成看起来像字、但并不存在的合成字形。只在本地运行，可随时关闭。",
+    "description": "Store summary and manifest description. Maximum 132 characters."
+  },
+  "enabled": {
+    "message": "启用",
+    "description": "Label for the on/off switch in the popup."
+  },
+  "intensity": {
+    "message": "强度",
+    "description": "Label for the intensity slider in the popup."
+  },
+  "preview": {
+    "message": "预览",
+    "description": "Heading above the live glyph preview."
+  },
+  "levelSlight": {
+    "message": "轻微",
+    "description": "Intensity name when the value is below 25."
+  },
+  "levelClear": {
+    "message": "明显",
+    "description": "Intensity name when the value is from 25 to 49."
+  },
+  "levelHeavy": {
+    "message": "浓重",
+    "description": "Intensity name when the value is from 50 to 79."
+  },
+  "levelMax": {
+    "message": "最强",
+    "description": "Intensity name when the value is 80 or above."
+  },
+  "intensityValue": {
+    "message": "$value$ ($level$)",
+    "description": "Slider readout: the numeric intensity and its short name.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "50"
+      },
+      "level": {
+        "content": "$2",
+        "example": "明显"
+      }
+    }
+  }
+}

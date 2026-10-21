@@ -29,8 +29,19 @@
       el.style.setProperty('--aig-o', '0.056em');
       el.appendChild(AIGlyph.renderSegments(AIGlyph.segment(text, 0.85), document));
     }
-    paint('cn', '珍珠奶茶');
-    paint('cn2', '第二杯半價');
+    const lang = new URLSearchParams(location.search).get('lang') || 'en';
+    if (lang === 'zh-CN') {
+      paint('cn', '珍珠奶茶');
+      paint('cn2', '第二杯半价');
+    } else if (lang === 'en') {
+      document.getElementById('cn').style.fontSize = '58px';
+      document.getElementById('cn').style.letterSpacing = '0.02em';
+      document.getElementById('cn2').style.letterSpacing = '0.04em';
+      paint('cn', 'Hot Coffee');
+      paint('cn2', 'Fresh Bread');
+    } else {
+      throw new Error('Unsupported preview lang: ' + lang);
+    }
   </script>
 </body>
 </html>
